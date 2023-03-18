@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QGraphicsScene>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -15,7 +16,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
+    QRect scene_rect;
+    QGraphicsScene* scene;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
