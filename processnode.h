@@ -20,13 +20,14 @@ class ProcessNode : public QGraphicsRectItem
 private:
     QRect m_rect;
     NodeType m_type;
-    LinkingNodes *binding_node;
+
     int select_idx=-1;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
 public:
     ProcessNode(int x,int y,LinkingNodes *nodes, NodeType type=NodeType::ND_INPUT);
     void SetSelectedPort(int idx,bool is_left=true);
     QRect GetPortRect(int idx);
+    LinkingNodes *binding_node;
 };
 
 #endif // PROCESSNODE_H

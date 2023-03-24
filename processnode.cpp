@@ -31,16 +31,16 @@ void ProcessNode::SetSelectedPort(int idx, bool is_left)
 QRect ProcessNode::GetPortRect(int idx)
 {
     int flg=0;
-    int sx=this->x()+2;
+    int sx=2;
     if(idx>=4)
     {
         flg=1;
         idx-=4;
-        sx=this->x()+rect().width()-2-LINKING_POINT_W;
+        sx=rect().width()-2-LINKING_POINT_W;
     }
 
-    int sy=rect().y()+binding_node->TitleHeight+2+LINKING_POINT_SZ*idx;
-    return QRect(sx,sy,LINKING_POINT_W+binding_node->RequireLeftWidth+1,LINKING_POINT_H);
+    int sy=binding_node->TitleHeight+2+LINKING_POINT_SZ*idx;
+    return mapToScene(QRect(sx,sy,LINKING_POINT_W,LINKING_POINT_H)).boundingRect().toRect();
 }
 
 void ProcessNode::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

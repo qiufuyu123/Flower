@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     flowerview.cpp \
+    linkingcurve.cpp \
     linkingnodes.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     flowerview.h \
+    linkingcurve.h \
     linkingnodes.h \
     mainwindow.h \
     processnode.h

@@ -2,6 +2,9 @@
 #define FLOWERVIEW_H
 
 #include <QGraphicsView>
+#include"processnode.h"
+#include"linkingcurve.h"
+
 
 class FlowerView : public QGraphicsView
 {
@@ -16,8 +19,10 @@ private:
     QGraphicsScene *m_scene;
     bool is_pressed;
     bool is_selecting=false;
-    QPoint selecting_from,selecting_end;
-    QGraphicsLineItem *temp_item=nullptr;
+    ProcessNode *node_from,*node_to;
+    int port_from,port_to;
+    QVector<LinkingCurve*> linking_lines;
+    LinkingCurve *temp_item=nullptr;
     QPointF now_pos;
     double m_scalnum;
 

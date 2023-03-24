@@ -42,8 +42,8 @@ private:
         {"",""},
         {CN("打印文本"),CN("打印str的内容")}};
     int m_input_num,m_output_num;
-    LinkingNodes *m_left_nodes[4];
-    LinkingNodes *m_right_nodes[4];
+    LinkingNodes *m_left_nodes[4]={nullptr,nullptr,nullptr,nullptr};
+    LinkingNodes *m_right_nodes[4]={nullptr,nullptr,nullptr,nullptr};
 
     QString title,desc;
 
